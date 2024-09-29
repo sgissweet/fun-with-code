@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: flex;
+        }
+        
+        input, select, button{
+            margin: 10px;
+            font-size: 15px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form id="calc">
+        <input type="text" id="first_num" placeholder="first number" required>
+        <select id="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+        <input class="num" type="text" id="second_num" placeholder="second number" required>
+        <button type="submit">Try Me!</button>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            const calc = $('#calc');
+            const first_num = $('#first_num');
+            const second_num = $('#second_num');
+            const operator = $('#operator');
+        
+            calc.on('submit', function(event) {
+                event.preventDefault();
+        
+                const value1 = parseInt(first_num.val());
+                const value2 = parseInt(second_num.val());
+                const operate = operator.val();
+                let result;
+        
+                if(isNaN(value1) || isNaN(value2) || value1 < 0 || value2 < 0) {
+                    alert('Error :(');
+                    console.log('Error :(');
+                    return;
+                }
+        
+                switch(operate) {
+                    case '+':
+                        result = value1 + value2;
+                        break;
+                    case '-':
+                        result = value1 - value2;
+                        break;
+                    case '*':
+                        result = value1 * value2;
+                        break;
+                    case '/':
+                        if(value2 == 0) {
+                            alert("It's over 9000!");
+                            console.log("It's over 9000!");
+                            return;
+                        } else {
+                            result = value1 / value2;
+                        }
+                        break;
+                    case '%':
+                        if(value2 == 0) {
+                            alert("It's over 9000!");
+                            console.log("It's over 9000!");
+                            return;
+                        } else {
+                            result = value1 % value2;
+                        }
+                        break;      
+                }
+        
+                alert('Result is ' + result);
+                console.log('Result is ' + result);
+            });
+
+            setInterval(function() {
+                alert('Please, use me...');
+            }, 30000);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+html, body {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(https://images7.alphacoders.com/333/333222.jpg);
+}
+
+@font-face {
+    font-family: Mario;
+    src: url(SuperMario256.ttf);
+}
+
+.head-text {
+    font-family: "Mario";
+    font-weight: 200;
+    font-size: 100px;
+    margin: 0;
+    color: rgb(238,28,37);
+}
+
+.home-text {
+    font-weight: 600;
+    font-size: 45px;
+    color: white;
+}
+
+.char-img {
+    margin: 10px;
+    height: 350px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.char-img:hover {
+    transform: scale(1.14); 
+}
+
+.striped-box {
+    background: repeating-linear-gradient(
+      135deg,          
+      #333,            
+      #333 10px,        
+      #444 10px,       
+      #444 20px         
+    );
+}
+  

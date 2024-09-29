@@ -1,0 +1,50 @@
+
+body {
+    margin: 0;
+}
+
+@font-face {
+    font-family: Mario;
+    src: url(SuperMario256.ttf);
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    padding: 10px;
+    /* striped */
+    background: repeating-linear-gradient(
+      135deg,
+      #333,
+      #333 10px,
+      #444 10px,
+      #444 20px
+    );
+    justify-content: center;
+    display: flex;
+}
+
+.nav-bar-div {
+    display: flexbox;
+    font-family: Mario;
+    font-size: 20px;
+    color: white;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-bar-div:hover {
+    border-radius: 5px;
+    background-color: aliceblue;
+    color:#333;
+}
+
+#home:hover {
+    border-radius: 5px;
+    background-color: aliceblue;
+    color: rgb(238,28,37);
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Balloon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: flex;
+        }
+        
+        .balloon {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: red;
+            margin: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon" id="balloon"></div>
+
+    <script>
+        const balloon = document.querySelector('.balloon')
+        const color = ['red', 'green', 'blue'];
+        let color_index = 0;
+
+        balloon.addEventListener('click', function() {
+            console.log("click");
+            let last_size = parseInt(balloon.style.width);
+            let current_size = last_size + 10;
+
+            if(current_size <= 420) {
+                balloon.style.width = current_size + 'px';
+                balloon.style.height = current_size + 'px';
+                color_index = (color_index + 1) % color.length;
+                balloon.style.backgroundColor = color[color_index];
+            } else {
+                balloon.style.width = '200px';
+                balloon.style.height = '200px';
+                color_index = 0;
+                balloon.style.backgroundColor = color[color_index];
+            }
+
+            console.log(current_size);
+            console.log(color_index);
+        });
+
+        balloon.addEventListener('mouseleave', function() {
+            console.log("mouse leave");
+            let last_size = parseInt(balloon.style.width);
+            let current_size = last_size - 5;
+
+            if(current_size > 200) {
+                balloon.style.width = current_size + 'px';
+                balloon.style.height = current_size + 'px';
+                color_index = (color_index - 1 + color.length) % color.length;
+                balloon.style.backgroundColor = color[color_index];
+            } else {
+                balloon.style.width = '200px';
+                balloon.style.height = '200px';
+                color_index = 0;
+                balloon.style.backgroundColor = color[color_index];
+            }
+
+            console.log(current_size);
+            console.log(color_index);
+        });
+    </script>
+</body>
+</html>

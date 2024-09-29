@@ -1,0 +1,22 @@
+table, td {
+    border:1px solid black;
+    border-collapse: collapse; 
+    width:100vw; 
+    height: 100vh;
+}
+
+.box1 {
+    display: flex;
+    align-items: center;
+    width:50vw;
+    height: 100vh;
+    background-color:darkorange;
+}
+
+.box2 {
+    display: flex;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+    background-color:plum;
+}

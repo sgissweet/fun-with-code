@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Balloon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: flex;
+        }
+        
+        .balloon {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: red;
+            margin: auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="balloon" id="balloon"></div>
+
+    <script>
+        $(document).ready(function() {
+            const color = ['red', 'green', 'blue'];
+            let color_index = 0;
+            
+            $('.balloon').on('click', function() {
+                console.log("click");
+                let last_size = parseInt($(this).css('width'));
+                let current_size = last_size + 10;
+
+                if (current_size <= 420) {
+                    $(this).css({
+                        'width': current_size + 'px',
+                        'height': current_size + 'px',
+                        'background-color': color[(color_index + 1) % color.length]
+                    });
+                    color_index = (color_index + 1) % color.length;
+                } else {
+                    $(this).css({
+                        'width': '200px',
+                        'height': '200px',
+                        'background-color': color[0]
+                    });
+                    color_index = 0;
+                }
+
+                console.log(current_size);
+                console.log(color_index);
+            });
+
+            $('.balloon').on('mouseleave', function() {
+                console.log("mouse leave");
+                let last_size = parseInt($(this).css('width'));
+                let current_size = last_size - 5;
+
+                if (current_size > 200) {
+                    $(this).css({
+                        'width': current_size + 'px',
+                        'height': current_size + 'px',
+                        'background-color': color[(color_index - 1 + color.length) % color.length]
+                    });
+                    color_index = (color_index - 1 + color.length) % color.length;
+                } else {
+                    $(this).css({
+                        'width': '200px',
+                        'height': '200px',
+                        'background-color': color[0]
+                    });
+                    color_index = 0;
+                }
+
+                console.log(current_size);
+                console.log(color_index);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+@font-face {
+    font-family: Mario;
+    src: url(SuperMario256.ttf);
+}
+
+body {
+    font-family: "Mario";
+    margin: 0;
+    width: 100vh;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.sec1 {
+    height: 70vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+.sec1 img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+
+.sec2_background {
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    padding-top: 10vh;
+    align-items: center;
+    color: aliceblue;
+    height: auto;
+    background: radial-gradient(circle, rgba(56,92,212,1) 0%, rgba(142,19,231,1) 100%);
+}
+
+.sec3 {
+    height: auto;
+    width: 100vw;
+    background-color: rgb(214, 30, 30);
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left-content {
+    width: 100%;
+    padding: 10vw;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.right-content {
+    width: 50vw;
+    padding-right: 8vw;
+    display: flex;
+    padding-top: 40vh;
+    align-items: baseline;
+    height: 100vh;
+}
+
+.right-content img {
+    padding-top: 10vh;
+    max-width: none;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.sec2_background img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+h1 {
+    font-size: 5rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.certs-container {
+    padding: 10vh 5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.certs-container img {
+    max-width: 100%;
+    width: 50vh;
+    height: auto;
+    margin: 10px;
+}
+
+.contact-container {
+    padding: 5vh 2vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    border-radius: 5%;
+    background: repeating-linear-gradient(
+      135deg,
+      #333,
+      #333 10px,
+      #444 10px,
+      #444 20px
+    );
+}
+
+.contact-container img {
+    max-width: 100%;
+    width: 8vh;
+    height: auto;
+    margin: 10px;
+}
+
+a {
+    font-family: "Ubuntu";
+    font-weight: bold;
+    text-align: center;
+    margin-left: 5vw;
+    font-size: 20px;
+    color: rgb(156, 167, 175);
+}
